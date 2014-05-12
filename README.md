@@ -9,12 +9,14 @@ Usage
 Pass URL as a parameter 
 
 ```
+mvn compile
 mvn exec:java -Dexec.args="{URL}"
 ```
 
 For example:
 
 ```
+mvn compile
 mvn exec:java -Dexec.args="http://www.example.com"
 ```
 
