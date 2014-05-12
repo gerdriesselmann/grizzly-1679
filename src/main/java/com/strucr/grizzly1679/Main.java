@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
 public class Main {
     public static void main(String[] args) {
         if (args.length == 0) {
-            System.out.println("Please pass URL to call");
+            System.out.println("\n== Usage Error ==\nPlease pass URL to call");
             System.exit(1);
         }
         String url = args[0];
@@ -34,10 +34,10 @@ public class Main {
         try {
             Future<Response> f = client.prepareGet(url).execute();
             Response r = f.get();
-            System.out.println("Got Respone " + r.getStatusText());
+            System.out.println("\n== OK ==\nGot Respone " + r.getStatusText());
             System.exit(0);
         } catch (Exception e) {
-            System.out.println("Cought Exception " + e.toString());
+            System.out.println("\n== Bug Hit! ==\nCaught Exception " + e.toString());
             System.exit(2);
         }
     }
